@@ -6,6 +6,8 @@ from database.ArtWork_DB import SQLArtworkDB
 from view.view_utils import input_positive_float
 from view.view_utils import input_yes_or_no
 from view.view_utils import show_all_artwork_list
+
+
 class View:
 
     def __init__(self, view_model):
@@ -22,13 +24,13 @@ class View:
             elif choice == 2:
                 self.search_all_artist()
             elif choice == 3:
-                pass
+                self.search_available_artist()
             elif choice == 4:
                 self.add_new_artwork()
             elif choice == 5:
-                pass
+                self.delete_an_artwork()
             elif choice == 6:
-                pass
+                self.change_status()
             elif choice == 7:
                 break
             else:
@@ -73,12 +75,52 @@ class View:
         print('******Search for all artwork by an artist*******')
 
         while True:
-            artist = input('Enter the artist to search for or enter to quit')
+            artist = input('Enter the artist to search for or enter to quit\n')
             if not artist:
                 break
             try:
                 all_artwork = self.view_model.search_all_artwork(artist)
                 show_all_artwork_list(all_artwork)
                 break
+            except ArtworkError as e:
+                print(str(e))
+    def search_available_artist(self):
+        print('******Search for artwork available by an artist******')
+        while True:
+            artist = input('Enter the artist to search for or enter to quit\n')
+            if not artist:
+                break
+            try:
+                available_artwork = self.view_model.search_available_artwork(artist)
+                show_all_artwork_list(available_artwork)
+                break
+            except ArtworkError as e:
+                print(str(e))
+
+    def delete_an_artwork(self):
+        print('******Delete an artwork by name******')
+        while True:
+            artwork = input('Enter the artworks name to be deleted or enter to quit\n')
+            if not artwork:
+                break
+            try:
+                deleted_artwork = self.view_model.delete_artwork(artwork)
+                print(artwork+" deleted")
+                break
+            except ArtworkError as e:
+                print(str(e))
+    def change_status(self):
+        print('******Change status of artwork to available or not available******')
+        while True:
+            artwork = input('Enter the artworks name to be changed or enter to quit\n')
+            available = input_yes_or_no(f"set {name} available? yes or no\n")
+            if not artwork:
+                break
+            try:
+                changed_artwork = self.view_model.change_status(artwork, available)
+                if (changed_artwork > 0):
+                    print(artwork+' updated')
+                else:
+                    print('Status was not affected')
             except ArtworkError as e:
                 print(str(e))

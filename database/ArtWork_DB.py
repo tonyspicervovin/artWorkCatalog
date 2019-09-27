@@ -39,7 +39,28 @@ class SQLArtworkDB():
     def search_all_artwork(self, artist):
         print(artist)
         con = sqlite3.connect(db_artist)
-        artwork_cursor = con.execute('SELECT * FROM ARTWORK WHERE artist = ?', artist)
+        artwork_cursor = con.execute('SELECT * FROM ARTWORK where artist like ?', (artist,))
         artworks = [ Artwork(*row) for row in artwork_cursor.fetchall() ]
         con.close()
         return artworks
+
+    def view_available_artwork(self, artist):
+        con = sqlite3.connect(db_artist)
+        artwork_cursor = con.execute('SELECT * FROM ARTWORK WHERE artist like ? and available = 1', artist)
+        artworks = [ Artwork(*row) for row in artwork_cursor.fetchall() ]
+        con.close()
+        return artworks
+
+    def delete_artwork(self, artwork):
+
+        con = sqlite3.connect(db_artist)
+        rows_mod = con.execute('DELETE FROM ARTWORK WHERE name = ?', artwork)
+        con.close()
+        return rows_mod
+
+    def change_status(self, artwork, available):
+
+        con = sqlite3.connect(db_artist)
+        rows_mod = con.execute('UPDATE ARTWORK set available = ? where name = ?', (available, artwork))
+        con.close()
+        return rows_mod
