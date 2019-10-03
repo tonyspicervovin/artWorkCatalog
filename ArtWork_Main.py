@@ -9,7 +9,7 @@ def main():
     artwork_view.show_menu()
 
 
-
+#main method to intialize db, get a view model, and than set that view. Than show menu
 
 if __name__ == '__main__':
     main()

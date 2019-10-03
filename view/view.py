@@ -5,7 +5,7 @@ from exceptions.artwork_error import ArtworkError
 from database.ArtWork_DB import SQLArtworkDB
 from view.view_utils import input_positive_float
 from view.view_utils import input_yes_or_no
-from view.view_utils import show_all_artwork_list
+
 
 
 class View:
@@ -13,7 +13,7 @@ class View:
     def __init__(self, view_model):
         self.view_model = view_model
 
-
+    #sets view model
     def show_menu(self):
         while True:
             choice = int(input("MENU \n1: Add Artist \n2: "
@@ -35,7 +35,7 @@ class View:
                 break
             else:
                 print("Unknown option selected")
-
+    #shows menu options and calls methods
     def add_new_artist(self):
         print("******Insert a new artist in to the database******\n")
 
@@ -52,6 +52,8 @@ class View:
                 break
             except ArtworkError as e:
                 print(str(e))
+    #method to insert artist to database, recieves input and email and creates new artist object
+    #  calls view model to call db to insert
 
     def add_new_artwork(self):
         print('******Insert a new piece of artwork in to the database******\n')
@@ -71,6 +73,9 @@ class View:
                 break
             except ArtworkError as e:
                 print(str(e))
+    #method to add artwork, recieves artist, name, price and availability and creates new artwork object
+    #calls view model to call db file to insert object in to db
+
     def search_all_artist(self):
         print('******Search for all artwork by an artist*******')
 
@@ -91,6 +96,7 @@ class View:
                 break
             except ArtworkError as e:
                 print(str(e))
+    #method to search artist, takes an input and calls view model to call db file to search db and display results
     def search_available_artist(self):
         print('******Search for artwork available by an artist******')
         while True:
@@ -104,6 +110,8 @@ class View:
                 break
             except ArtworkError as e:
                 print(str(e))
+    #method to search artist, takes an input and calls view model to call db file to search db and display results
+    #only returns artwork that is available
 
     def delete_an_artwork(self):
         print('******Delete an artwork by name******')
@@ -112,23 +120,32 @@ class View:
             if not artwork:
                 break
             try:
-                deleted_artwork = self.view_model.delete_artwork(artwork)
-                print(artwork+" deleted")
+                isDelete = self.view_model.delete_artwork(artwork)
+                if isDelete is False:
+                    print(artwork+" not found")
+                else:
+                    print(artwork+" deleted")
                 break
             except ArtworkError as e:
                 print(str(e))
+    #method to delete artwork, recieves an artwork piece's name and calls view model to call db file
+    #to delete from db, displays results of deleted or not
+
     def change_status(self):
         print('******Change status of artwork to available or not available******')
         while True:
             artwork = input('Enter the artworks name to be changed or enter to quit\n')
-            available = input_yes_or_no(f"set {name} available? yes or no\n")
+            available = input_yes_or_no(f"set {artwork} available? yes or no\n")
             if not artwork:
                 break
             try:
                 changed_artwork = self.view_model.change_status(artwork, available)
-                if (changed_artwork > 0):
-                    print(artwork+' updated')
+                if changed_artwork is False:
+                    print(artwork+' not found')
                 else:
-                    print('Status was not affected')
+                    print(f'{artwork} updated')
+                break
             except ArtworkError as e:
                 print(str(e))
+    #method to change the available status of a piece of artwork, displays whether
+    #piece was changed, or if none was found that is displayed

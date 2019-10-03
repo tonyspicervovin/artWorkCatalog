@@ -18,3 +18,4 @@ class Artist():
     def __str__(self):
         return f'Name: {self.name}, Email: {self.email}'
 
+#defines both artwork and artist classes which define the objects that will be created

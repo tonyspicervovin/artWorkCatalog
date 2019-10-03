@@ -17,6 +17,11 @@ class ViewModel:
         artworks = self.db.search_available_artwork(artist)
         return artworks;
     def delete_artwork(self, artwork):
-        self.db.delete_artwork(artwork)
+        isDelete = self.db.delete_artwork(artwork)
+        return isDelete
     def change_status(self, artwork, available):
-        self.db.change_status(artwork, available)
+        isChanged = self.db.change_status(artwork, available)
+        return isChanged
+
+#this file is called from view with arguments to communicate with the db file, and than
+#recieve information from db file and communicate back to view file
