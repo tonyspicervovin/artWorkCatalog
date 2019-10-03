@@ -7,13 +7,14 @@ from database import ArtWork_DB
 
 
 
+
 class TestArtworkDB(TestCase):
     test_db_url = 'test_artwork.db'
 
 
 
     def setUp(self):
-        ArtWork_DB.db = self.test_db_url
+        ArtWork_DB.db_artist = self.test_db_url
 
         with sqlite3.connect(self.test_db_url) as conn:
             conn.execute('DROP TABLE IF EXISTS ARTIST')
@@ -25,36 +26,43 @@ class TestArtworkDB(TestCase):
             conn.execute('CREATE TABLE ARTWORK (artistName TEXT NOT NULL, name TEXT UNIQUE NOT NULL, price FLOAT, available INTEGER, FOREIGN KEY(artistName) REFERENCES ARTIST(artistsName))')
         conn.close()
 
-        self.db = ArtWork_DB.SQLArtworkDB()
+        self.db_artist = ArtWork_DB.SQLArtworkDB()
+
+
+
 
 
     def test_add_new_artist(self):
         a1 = Artist('Tony', 'tony.spicer.covin@gmail.com')
-        self.db.insert_artist(a1)
+        self.db_artist.insert_artist(a1)
         expected = { 'Tony' : 'tony.spicer.covin@gmail.com'}
         self.compare_db_add_artist(expected)
 
-        a2 = Artist('James', 'jdot@gmail.com')
-        self.db.insert_artist(a2)
-        expected = { 'James' : 'jdot@gmail.com'}
 
-        self.compare_db_add_artist(expected)
 
     def test_add_new_artwork(self):
         a1 = Artwork('Tony', 'Mona', 400, 1)
-        self.db.insert_artwork(a1)
+        self.db_artist.insert_artwork(a1)
+
         expected = { 'Tony' : "Mona", 400 : 1 }
 
         self.compare_db_add_artwork(expected)
 
-    def delete_artwork(self):
+
+    def test_delete_artwork(self):
         a1 = Artwork('Tony', 'Jody', 400, 1)
-        self.db.insert_artwork(a1)
-        a2 = Artwork('Tony', 'Lisa', 3000, 0)
-        expected = { 'Tony' : 'Lisa', 3000 : 0}
-        self.db.insert_artwork(a2)
-        self.db.delete_artwork('Lisa')
+        self.db_artist.insert_artwork(a1)
+        self.db_artist.delete_artwork('Jody')
+        expected = { 'Tony', 'Jody', 400, 1}
         self.check_delete(expected)
+
+    def test_change_status_artwork(self):
+        a1 = Artwork('Tony', 'Jody', 400, 0)
+        self.db_artist.insert_artwork(a1)
+        self.db_artist.change_status('Jody', 1)
+        expected = { 'Tony' : 'Jody', 400 : 1}
+        self.compare_db_add_artwork(expected)
+
 
     def check_delete(self, expected):
         conn = sqlite3.connect(self.test_db_url)

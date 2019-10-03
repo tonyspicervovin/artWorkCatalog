@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="884afa38-35d8-4b7c-9b6d-e461e9d7287d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/test_artwork.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/ArtWork_Main.py" afterPath="$PROJECT_DIR$/ArtWork_Main.py" />
-      <change beforePath="$PROJECT_DIR$/Test_Artwork_Catalog.py" afterPath="" />
       <change beforePath="$PROJECT_DIR$/artStore.db" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/database/ArtWork_DB.py" afterPath="$PROJECT_DIR$/database/ArtWork_DB.py" />
-      <change beforePath="$PROJECT_DIR$/exceptions/artwork_error.py" afterPath="$PROJECT_DIR$/exceptions/artwork_error.py" />
-      <change beforePath="$PROJECT_DIR$/model/Art_Model.py" afterPath="$PROJECT_DIR$/model/Art_Model.py" />
-      <change beforePath="$PROJECT_DIR$/view/view.py" afterPath="$PROJECT_DIR$/view/view.py" />
-      <change beforePath="$PROJECT_DIR$/view/view_utils.py" afterPath="$PROJECT_DIR$/view/view_utils.py" />
-      <change beforePath="$PROJECT_DIR$/view_model.py" afterPath="$PROJECT_DIR$/view_model.py" />
+      <change beforePath="$PROJECT_DIR$/test_artwork.db" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/test_artwork.py" afterPath="$PROJECT_DIR$/test_artwork.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ArtWork_DB.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ArtWork_DB.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/ArtWork_DB.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="227">
+              <caret line="16" column="194" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="194" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
                 <marker date="1570130611014" expanded="true" signature="335:417" ph="CREATE TABLE... ARTIST" />
@@ -62,22 +55,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_artwork.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test_artwork.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_artwork.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-143">
-              <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+            <state relative-caret-position="171">
+              <caret line="62" column="43" lean-forward="false" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <marker date="1570126887678" expanded="true" signature="382:403" ph="DROP TABLE I... " />
-                <marker date="1570126887678" expanded="true" signature="382:409" ph="DROP TABLE I... " />
-                <marker date="1570126887678" expanded="true" signature="438:466" ph="DROP TABLE I... " />
-                <marker date="1570126887678" expanded="true" signature="573:641" ph="CREATE TABLE... ARTIST" />
-                <marker date="1570126887678" expanded="true" signature="640:641" ph="CREATE TABLE... MILES" />
-                <marker date="1570126887678" expanded="true" signature="670:832" ph="CREATE TABLE... ARTWORK" />
-                <marker date="1570126887678" expanded="true" signature="1962:1983" ph="SELECT * FRO... ARTWORK" />
-                <marker date="1570126887678" expanded="true" signature="2211:2232" ph="SELECT * FRO... ARTWORK" />
-                <marker date="1570126887678" expanded="true" signature="2513:2533" ph="SELECT * FRO... ARTIST" />
+                <marker date="1570135672096" expanded="true" signature="390:417" ph="DROP TABLE I... " />
+                <marker date="1570135672096" expanded="true" signature="400:401" ph="DROP TABLE I... " />
+                <marker date="1570135672096" expanded="true" signature="400:417" ph="DELETE FROM ARTIST... " />
+                <marker date="1570135672096" expanded="true" signature="446:474" ph="DROP TABLE I... " />
+                <marker date="1570135672096" expanded="true" signature="466:474" ph="DELETE FROM ARTWORK... " />
+                <marker date="1570135672096" expanded="true" signature="581:649" ph="CREATE TABLE... ARTIST" />
+                <marker date="1570135672096" expanded="true" signature="678:840" ph="CREATE TABLE... ARTWORK" />
+                <marker date="1570135672096" expanded="true" signature="2028:2049" ph="SELECT * FRO... ARTWORK" />
+                <marker date="1570135672096" expanded="true" signature="2277:2298" ph="SELECT * FRO... ARTWORK" />
+                <marker date="1570135672096" expanded="true" signature="2579:2599" ph="SELECT * FRO... ARTIST" />
               </folding>
             </state>
           </provider>
@@ -118,7 +112,7 @@
       <file leaf-file-name="view.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/view.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1476">
+            <state relative-caret-position="2250">
               <caret line="150" column="62" lean-forward="false" selection-start-line="150" selection-start-column="62" selection-end-line="150" selection-end-column="62" />
               <folding>
                 <element signature="e#1#35#0" expanded="true" />
@@ -183,13 +177,13 @@
         <option value="$PROJECT_DIR$/utils/validation.py" />
         <option value="$PROJECT_DIR$/view/view_utils.py" />
         <option value="$PROJECT_DIR$/test/test_artwork.py" />
-        <option value="$PROJECT_DIR$/test_artwork.py" />
         <option value="$PROJECT_DIR$/exceptions/artwork_error.py" />
         <option value="$PROJECT_DIR$/model/Art_Model.py" />
         <option value="$PROJECT_DIR$/view/view.py" />
         <option value="$PROJECT_DIR$/ArtWork_Main.py" />
         <option value="$PROJECT_DIR$/view_model.py" />
         <option value="$PROJECT_DIR$/database/ArtWork_DB.py" />
+        <option value="$PROJECT_DIR$/test_artwork.py" />
       </list>
     </option>
   </component>
@@ -199,11 +193,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="90" />
-    <option name="y" value="23" />
-    <option name="width" value="1574" />
-    <option name="height" value="728" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="650" />
+    <option name="width" value="630" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -332,15 +325,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="90" y="23" width="1574" height="728" extended-state="0" />
+    <frame x="650" y="0" width="630" height="800" extended-state="0" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328594" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38546604" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38546604" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328594" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36334914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.083550915" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31636864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21768707" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32599726" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -453,15 +446,16 @@
           <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1570126887678" expanded="true" signature="382:403" ph="DROP TABLE I... " />
-            <marker date="1570126887678" expanded="true" signature="382:409" ph="DROP TABLE I... " />
-            <marker date="1570126887678" expanded="true" signature="438:466" ph="DROP TABLE I... " />
-            <marker date="1570126887678" expanded="true" signature="573:641" ph="CREATE TABLE... ARTIST" />
-            <marker date="1570126887678" expanded="true" signature="640:641" ph="CREATE TABLE... MILES" />
-            <marker date="1570126887678" expanded="true" signature="670:832" ph="CREATE TABLE... ARTWORK" />
-            <marker date="1570126887678" expanded="true" signature="1962:1983" ph="SELECT * FRO... ARTWORK" />
-            <marker date="1570126887678" expanded="true" signature="2211:2232" ph="SELECT * FRO... ARTWORK" />
-            <marker date="1570126887678" expanded="true" signature="2513:2533" ph="SELECT * FRO... ARTIST" />
+            <marker date="1570135672096" expanded="true" signature="390:417" ph="DROP TABLE I... " />
+            <marker date="1570135672096" expanded="true" signature="400:401" ph="DROP TABLE I... " />
+            <marker date="1570135672096" expanded="true" signature="400:417" ph="DELETE FROM ARTIST... " />
+            <marker date="1570135672096" expanded="true" signature="446:474" ph="DROP TABLE I... " />
+            <marker date="1570135672096" expanded="true" signature="466:474" ph="DELETE FROM ARTWORK... " />
+            <marker date="1570135672096" expanded="true" signature="581:649" ph="CREATE TABLE... ARTIST" />
+            <marker date="1570135672096" expanded="true" signature="678:840" ph="CREATE TABLE... ARTWORK" />
+            <marker date="1570135672096" expanded="true" signature="2028:2049" ph="SELECT * FRO... ARTWORK" />
+            <marker date="1570135672096" expanded="true" signature="2277:2298" ph="SELECT * FRO... ARTWORK" />
+            <marker date="1570135672096" expanded="true" signature="2579:2599" ph="SELECT * FRO... ARTIST" />
           </folding>
         </state>
       </provider>
@@ -473,6 +467,22 @@
     <entry file="file://$PROJECT_DIR$/model/model.py" />
     <entry file="file://$PROJECT_DIR$/Artist_DB.py" />
     <entry file="file://$PROJECT_DIR$/utils/validation.py" />
+    <entry file="file://$PROJECT_DIR$/view/view_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test_Artwork_Catalog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/exceptions/artwork_error.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -489,24 +499,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/view.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1476">
-          <caret line="150" column="62" lean-forward="false" selection-start-line="150" selection-start-column="62" selection-end-line="150" selection-end-column="62" />
-          <folding>
-            <element signature="e#1#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/view_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ArtWork_Main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -517,45 +509,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_artwork.py">
+    <entry file="file://$PROJECT_DIR$/view/view.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-143">
-          <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+        <state relative-caret-position="2250">
+          <caret line="150" column="62" lean-forward="false" selection-start-line="150" selection-start-column="62" selection-end-line="150" selection-end-column="62" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
-            <marker date="1570126887678" expanded="true" signature="382:403" ph="DROP TABLE I... " />
-            <marker date="1570126887678" expanded="true" signature="382:409" ph="DROP TABLE I... " />
-            <marker date="1570126887678" expanded="true" signature="438:466" ph="DROP TABLE I... " />
-            <marker date="1570126887678" expanded="true" signature="573:641" ph="CREATE TABLE... ARTIST" />
-            <marker date="1570126887678" expanded="true" signature="640:641" ph="CREATE TABLE... MILES" />
-            <marker date="1570126887678" expanded="true" signature="670:832" ph="CREATE TABLE... ARTWORK" />
-            <marker date="1570126887678" expanded="true" signature="1962:1983" ph="SELECT * FRO... ARTWORK" />
-            <marker date="1570126887678" expanded="true" signature="2211:2232" ph="SELECT * FRO... ARTWORK" />
-            <marker date="1570126887678" expanded="true" signature="2513:2533" ph="SELECT * FRO... ARTIST" />
+            <element signature="e#1#35#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test_Artwork_Catalog.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="67" lean-forward="false" selection-start-line="26" selection-start-column="67" selection-end-line="26" selection-end-column="67" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/ArtWork_DB.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="227">
+          <caret line="16" column="194" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="194" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
             <marker date="1570130611014" expanded="true" signature="335:417" ph="CREATE TABLE... ARTIST" />
@@ -568,6 +535,34 @@
             <marker date="1570130611014" expanded="true" signature="3002:3021" ph="DELETE FROM ARTWORK... " />
             <marker date="1570130611014" expanded="true" signature="3002:3036" ph="DELETE FROM ARTWORK... " />
             <marker date="1570130611014" expanded="true" signature="3389:3436" ph="UPDATE ARTWORK... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="67" lean-forward="false" selection-start-line="26" selection-start-column="67" selection-end-line="26" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_artwork.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="62" column="43" lean-forward="false" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1570135672096" expanded="true" signature="390:417" ph="DROP TABLE I... " />
+            <marker date="1570135672096" expanded="true" signature="400:401" ph="DROP TABLE I... " />
+            <marker date="1570135672096" expanded="true" signature="400:417" ph="DELETE FROM ARTIST... " />
+            <marker date="1570135672096" expanded="true" signature="446:474" ph="DROP TABLE I... " />
+            <marker date="1570135672096" expanded="true" signature="466:474" ph="DELETE FROM ARTWORK... " />
+            <marker date="1570135672096" expanded="true" signature="581:649" ph="CREATE TABLE... ARTIST" />
+            <marker date="1570135672096" expanded="true" signature="678:840" ph="CREATE TABLE... ARTWORK" />
+            <marker date="1570135672096" expanded="true" signature="2028:2049" ph="SELECT * FRO... ARTWORK" />
+            <marker date="1570135672096" expanded="true" signature="2277:2298" ph="SELECT * FRO... ARTWORK" />
+            <marker date="1570135672096" expanded="true" signature="2579:2599" ph="SELECT * FRO... ARTIST" />
           </folding>
         </state>
       </provider>
