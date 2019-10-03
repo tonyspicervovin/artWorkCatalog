@@ -1,11 +1,8 @@
-
 from model.Art_Model import Artist
 from model.Art_Model import Artwork
 from exceptions.artwork_error import ArtworkError
-from database.ArtWork_DB import SQLArtworkDB
 from view.view_utils import input_positive_float
 from view.view_utils import input_yes_or_no
-
 
 
 class View:
@@ -14,6 +11,7 @@ class View:
         self.view_model = view_model
 
     #sets view model
+
     def show_menu(self):
         while True:
             choice = int(input("MENU \n1: Add Artist \n2: "
@@ -35,15 +33,15 @@ class View:
                 break
             else:
                 print("Unknown option selected")
+
     #shows menu options and calls methods
+
     def add_new_artist(self):
         print("******Insert a new artist in to the database******\n")
-
         while True:
             name = input("Enter the artists name to insert or enter to quit: \n")
             if not name:
                 break
-
             email = input(f"Enter the email for {name}: \n")
             artist = Artist(name, email)
             try:
@@ -52,12 +50,12 @@ class View:
                 break
             except ArtworkError as e:
                 print(str(e))
+
     #method to insert artist to database, recieves input and email and creates new artist object
     #  calls view model to call db to insert
 
     def add_new_artwork(self):
         print('******Insert a new piece of artwork in to the database******\n')
-
         while True:
             artist = input("Enter the artist of the artwork or enter to quit\n")
             if not artist:
@@ -65,7 +63,6 @@ class View:
             name = input("Enter the name of the piece\n")
             price = input_positive_float(f'Enter the price for {name}')
             available = input_yes_or_no(f"Is {name} available? yes or no\n")
-
             artwork = Artwork(artist, name, price, available)
             try:
                 self.view_model.insert_artwork(artwork)
@@ -73,12 +70,12 @@ class View:
                 break
             except ArtworkError as e:
                 print(str(e))
+
     #method to add artwork, recieves artist, name, price and availability and creates new artwork object
     #calls view model to call db file to insert object in to db
 
     def search_all_artist(self):
         print('******Search for all artwork by an artist*******')
-
         while True:
             artist = input('Enter the artist to search for or enter to quit\n')
             if not artist:
@@ -96,7 +93,9 @@ class View:
                 break
             except ArtworkError as e:
                 print(str(e))
+
     #method to search artist, takes an input and calls view model to call db file to search db and display results
+
     def search_available_artist(self):
         print('******Search for artwork available by an artist******')
         while True:
@@ -110,6 +109,7 @@ class View:
                 break
             except ArtworkError as e:
                 print(str(e))
+
     #method to search artist, takes an input and calls view model to call db file to search db and display results
     #only returns artwork that is available
 
@@ -128,6 +128,7 @@ class View:
                 break
             except ArtworkError as e:
                 print(str(e))
+
     #method to delete artwork, recieves an artwork piece's name and calls view model to call db file
     #to delete from db, displays results of deleted or not
 
@@ -147,5 +148,6 @@ class View:
                 break
             except ArtworkError as e:
                 print(str(e))
+
     #method to change the available status of a piece of artwork, displays whether
     #piece was changed, or if none was found that is displayed

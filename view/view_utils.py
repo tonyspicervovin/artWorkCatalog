@@ -1,4 +1,3 @@
-
 def input_positive_float(question):
     while True:
         try:
@@ -9,7 +8,10 @@ def input_positive_float(question):
                 return number
         except ValueError as e:
             print("Enter a number.")
+
 ##utility ensures the price is a positive float
+
+
 def input_yes_or_no(question):
     itsavailable = 'yes'
     notavailable = 'no'
@@ -21,5 +23,6 @@ def input_yes_or_no(question):
             return 0
         else:
             print("Enter yes or no")
+
 ## this utility verifies that they input yes or no for available
 ## returns 1 for yes, 0 for not available
