@@ -10,7 +10,7 @@ class SQLArtworkDB():
     def __init__(self):
         with sqlite3.connect(db_artist) as con:
             con.execute(
-                'CREATE TABLE IF NOT EXISTS ARTWORK (artist TEXT NOT NULL, name TEXT UNIQUE NOT NULL, price FLOAT, available INTEGER)')
+                'CREATE TABLE IF NOT EXISTS ARTWORK (artistName TEXT NOT NULL, name TEXT UNIQUE NOT NULL, price FLOAT, available INTEGER)')
         with sqlite3.connect(db_artist) as con:
             con.execute('CREATE TABLE IF NOT EXISTS ARTIST (name TEXT PRIMARY KEY UNIQUE NOT NULL , email TEXT NOT NULL)')
 
@@ -37,24 +37,23 @@ class SQLArtworkDB():
 
 
     def search_all_artwork(self, artist):
-        print(artist)
         con = sqlite3.connect(db_artist)
-        artwork_cursor = con.execute('SELECT * FROM ARTWORK where artist like ?', (artist,))
+        artwork_cursor = con.execute('SELECT * FROM ARTWORK where artistName = ?', (artist,))
         artworks = [ Artwork(*row) for row in artwork_cursor.fetchall() ]
         con.close()
         return artworks
 
-    def view_available_artwork(self, artist):
+    def search_available_artwork(self, artist):
         con = sqlite3.connect(db_artist)
-        artwork_cursor = con.execute('SELECT * FROM ARTWORK WHERE artist like ? and available = 1', artist)
+        artwork_cursor = con.execute('SELECT * FROM ARTWORK WHERE artistName like ? and available = 1', (artist,))
         artworks = [ Artwork(*row) for row in artwork_cursor.fetchall() ]
         con.close()
         return artworks
 
     def delete_artwork(self, artwork):
-
+        print(artwork)
         con = sqlite3.connect(db_artist)
-        rows_mod = con.execute('DELETE FROM ARTWORK WHERE name = ?', artwork)
+        rows_mod = con.execute('DELETE FROM ARTWORK WHERE name = ?', (artwork,))
         con.close()
         return rows_mod
 

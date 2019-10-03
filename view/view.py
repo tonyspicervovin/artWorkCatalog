@@ -80,7 +80,14 @@ class View:
                 break
             try:
                 all_artwork = self.view_model.search_all_artwork(artist)
-                show_all_artwork_list(all_artwork)
+                if not all_artwork:
+                    print(f"Nothing found for artist {artist}")
+                for row in all_artwork:
+                    if row.available == 1:
+                        available = "Yes"
+                    elif row.available == 0:
+                        available = "No"
+                    print(f'Name: {row.name} Artist: {row.artist} Price: {row.price} Available: {available}' )
                 break
             except ArtworkError as e:
                 print(str(e))
@@ -92,7 +99,8 @@ class View:
                 break
             try:
                 available_artwork = self.view_model.search_available_artwork(artist)
-                show_all_artwork_list(available_artwork)
+                for row in available_artwork:
+                    print(f'Name: {row.name} Artist: {row.artist} Price: {row.price} Available: Yes')
                 break
             except ArtworkError as e:
                 print(str(e))

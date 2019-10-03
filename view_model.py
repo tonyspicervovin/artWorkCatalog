@@ -11,9 +11,11 @@ class ViewModel:
     def insert_artwork(self, artwork):
         self.db.insert_artwork(artwork)
     def search_all_artwork(self, artist):
-        self.db.search_all_artwork(artist)
+        artworks = self.db.search_all_artwork(artist)
+        return artworks;
     def search_available_artwork(self, artist):
-        self.db.search_available_artwork(artist)
+        artworks = self.db.search_available_artwork(artist)
+        return artworks;
     def delete_artwork(self, artwork):
         self.db.delete_artwork(artwork)
     def change_status(self, artwork, available):
