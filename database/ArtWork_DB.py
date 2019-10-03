@@ -11,10 +11,9 @@ class SQLArtworkDB():
     def __init__(self):
 
         with sqlite3.connect(db_artist) as con:
-            con.execute('CREATE TABLE IF NOT EXISTS ARTIST (artistsName TEXT NOT NULL, email TEXT NOT NULL)')
+            con.execute('CREATE TABLE IF NOT EXISTS ARTIST (artistsName TEXT NOT NULL, email TEXT UNIQUE NOT NULL)')
         with sqlite3.connect(db_artist) as con:
-            con.execute(
-                'CREATE TABLE IF NOT EXISTS ARTWORK (artistName TEXT NOT NULL, name TEXT UNIQUE NOT NULL, price FLOAT, available INTEGER, FOREIGN KEY(artistName) REFERENCES ARTIST(artistsName))')
+            con.execute('CREATE TABLE IF NOT EXISTS ARTWORK (artistName TEXT NOT NULL, name TEXT UNIQUE NOT NULL, price FLOAT, available INTEGER, FOREIGN KEY(artistName) REFERENCES ARTIST(artistsName))')
 
     #initializes db, creates both tables if not existing already
     def insert_artist(self, artist):
@@ -26,7 +25,7 @@ class SQLArtworkDB():
             con.close()
             return rows_mod
         except sqlite3.IntegrityError as ie:
-            raise ArtworkError(f'Cannot add a duplicate artist, {artist.name} already exists ')
+            raise ArtworkError(f'Cannot add a duplicate artist, {artist.email} already exists ')
     #inserting artist in to db, recieves artist object from view_model which is passed from view, returns rows modified
     #to verify if artist has been added, if a duplicate artist is added it is not added and error message is passed
     def insert_artwork(self, artwork):

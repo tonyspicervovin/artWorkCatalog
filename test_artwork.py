@@ -4,7 +4,7 @@ from unittest import TestCase
 from model.Art_Model import Artwork
 from model.Art_Model import Artist
 from database import ArtWork_DB
-
+from exceptions.artwork_error import ArtworkError
 
 
 
@@ -29,7 +29,16 @@ class TestArtworkDB(TestCase):
         self.db_artist = ArtWork_DB.SQLArtworkDB()
 
 
-
+    def test_add_duplicate_artist(self):
+        a1 = Artist('Tony','tt45@gmail.com')
+        a2 = Artist('John', 'tt45@gmail.com')
+        with self.assertRaises(ArtworkError):
+            self.db_artist.insert_artist(a2)
+    def test_get_all_artwork(self):
+        a1 = Artwork('Tony', 'Mona', 400, 1)
+        a2 = Artwork('Bee', 'Jody', 500, 0)
+        self.db_artist.insert_artwork(a1)
+        self.db_artist.insert_artwork(a2)
 
 
     def test_add_new_artist(self):
@@ -55,6 +64,13 @@ class TestArtworkDB(TestCase):
         self.db_artist.delete_artwork('Jody')
         expected = { 'Tony', 'Jody', 400, 1}
         self.check_delete(expected)
+
+    def test_duplicate_artwork(self):
+        a1 = Artwork('Tony', 'Jody', 400, 1)
+        self.db_artist.insert_artwork(a1)
+        a2 = Artwork('Bee', 'Jody', 500, 0)
+        with self.assertRaises(ArtworkError):
+            self.db_artist.insert_artwork(a2)
 
     def test_change_status_artwork(self):
         a1 = Artwork('Tony', 'Jody', 400, 0)
